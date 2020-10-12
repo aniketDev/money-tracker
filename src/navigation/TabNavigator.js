@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Login from '../screens/user/Login';
 import Signup from '../screens/user/Signup';
+import { Colors } from '../constants';
 
 const TabNavigator = () => {
   const Tab = createBottomTabNavigator();

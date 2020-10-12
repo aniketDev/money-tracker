@@ -3,13 +3,12 @@ import {
   createDrawerNavigator,
   DrawerItemList
 } from '@react-navigation/drawer';
-import Login from '../screens/user/Login';
-import Signup from '../screens/user/Signup';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { View } from 'react-native';
 import { Colors } from '../constants';
+import AppNavigator from './AppNavigator';
 
-const DrawerNavigator = () => {
+const DrawerNavigator = (props) => {
   const Drawer = createDrawerNavigator();
   const drawerContent = (props) => (
     <View style={{ paddingTop: 10 }}>
@@ -26,8 +25,7 @@ const DrawerNavigator = () => {
         activeTintColor: Colors.primary
       }}
     >
-      <Drawer.Screen component={Login} name="Login" />
-      <Drawer.Screen component={Signup} name="Signup" />
+      <Drawer.Screen component={AppNavigator} name="Home" />
     </Drawer.Navigator>
   );
 };
