@@ -1,14 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import RootNavigator from './navigation';
+import { useFonts } from 'expo-font';
+import { useAssets } from 'expo-asset';
+import { AppLoading } from 'expo';
 
 const initialData = {};
 const store = configureStore(initialData);
 
+let customFonts = {
+  'open-sans': require('../assets/fonts/OpenSans/OpenSans-Regular.ttf'),
+  'open-sans-bold': require('../assets/fonts/OpenSans/OpenSans-Bold.ttf')
+};
+let assets = [];
+
 export default () => {
+  let [fontsLoaded, fontLoadingError] = useFonts(customFonts);
+  let [assetsLoaded, assetsLoadingError] = useAssets(assets);
+  if (!fontsLoaded || !assetsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
     <Provider store={store}>
       <RootNavigator />

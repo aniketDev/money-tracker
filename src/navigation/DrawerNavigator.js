@@ -8,7 +8,7 @@ import { View } from 'react-native';
 import { Colors } from '../constants';
 import AppNavigator from './AppNavigator';
 
-const DrawerNavigator = (props) => {
+const DrawerNavigator = () => {
   const Drawer = createDrawerNavigator();
   const drawerContent = (props) => (
     <View style={{ paddingTop: 10 }}>

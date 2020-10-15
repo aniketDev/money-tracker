@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from 'react-native';
 const Login = () => {
   return (
     <View style={styles.container}>
-      <Text>Welcome to login screen!</Text>
+      <Text style={{ fontFamily: 'open-sans' }}>Welcome to login screen!</Text>
     </View>
   );
 };

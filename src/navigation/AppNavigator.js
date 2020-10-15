@@ -2,7 +2,6 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import TabNavigator from './TabNavigator';
-import DrawerNavigator from './DrawerNavigator';
 import { Colors } from '../constants';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import { HeaderButtonComponent } from '../components/UI';
