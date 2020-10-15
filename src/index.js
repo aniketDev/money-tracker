@@ -11,7 +11,9 @@ const store = configureStore(initialData);
 
 let customFonts = {
   'open-sans': require('../assets/fonts/OpenSans/OpenSans-Regular.ttf'),
-  'open-sans-bold': require('../assets/fonts/OpenSans/OpenSans-Bold.ttf')
+  'open-sans-bold': require('../assets/fonts/OpenSans/OpenSans-Bold.ttf'),
+  'open-sans-light': require('../assets/fonts/OpenSans/OpenSans-Light.ttf'),
+  'open-sans-semibold': require('../assets/fonts/OpenSans/OpenSans-SemiBold.ttf')
 };
 let assets = [];
 
