@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback
+} from 'react-native';
 
 const SignInScreen = () => {
   return (
