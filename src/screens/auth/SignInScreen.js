@@ -4,14 +4,23 @@ import {
   StyleSheet,
   Text,
   KeyboardAvoidingView,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  TextInput
 } from 'react-native';
+import { Input } from 'react-native-elements';
+import { Formik, Form, Field } from 'formik';
 
 const SignInScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to SignInScreen screen!</Text>
-    </View>
+    <TouchableWithoutFeedback>
+      <View style={styles.container}>
+        <Formik>
+          <Form>
+            <Field type="email" name="email" component={TextInput}></Field>
+          </Form>
+        </Formik>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
