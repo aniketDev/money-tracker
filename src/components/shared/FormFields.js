@@ -13,6 +13,8 @@ export const TextInputField = ({
       onChangeText={handleChange(name)}
       value={value}
       onBlur={handleBlur}
+      placeholder={props.placeholder}
+      autoCompleteType="username"
     ></TextInput>
     <ErrorMessage name={name} component={Text} />
   </View>

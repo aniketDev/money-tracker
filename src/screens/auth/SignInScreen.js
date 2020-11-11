@@ -9,16 +9,14 @@ import {
 } from 'react-native';
 import { Input } from 'react-native-elements';
 import { Formik, Form, Field } from 'formik';
+import { TextInputField } from '../../components/shared/FormFields';
+import SignInForm from '../../components/auth/SignInForm';
 
 const SignInScreen = () => {
   return (
     <TouchableWithoutFeedback>
       <View style={styles.container}>
-        <Formik>
-          <Form>
-            <Field type="email" name="email" component={TextInput}></Field>
-          </Form>
-        </Formik>
+        <SignInForm />
       </View>
     </TouchableWithoutFeedback>
   );

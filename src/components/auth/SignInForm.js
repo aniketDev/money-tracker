@@ -1,11 +1,22 @@
+import { Field, Formik } from 'formik';
 import React from 'react';
 import { View, StyleSheet, Text, TextInput } from 'react-native';
+import { TextInputField } from '../shared/FormFields';
 
 const SignInForm = () => {
   return (
-    <View style={styles.fieldContainer}>
-      <Text>Username</Text>
-      <TextInput></TextInput>
+    <View style={styles.formContainer}>
+      <Formik>
+        {({ handleSubmit }) => (
+          <View>
+            <Field
+              name="email"
+              component={TextInputField}
+              placeholder="username"
+            ></Field>
+          </View>
+        )}
+      </Formik>
     </View>
   );
 };
@@ -15,7 +26,7 @@ export const SignInOptions = () => {
 };
 
 const styles = StyleSheet.create({
-  fieldContainer: {
+  formContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
