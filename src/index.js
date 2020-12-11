@@ -4,7 +4,7 @@ import configureStore from './store';
 import RootNavigator from './navigation';
 import { useFonts } from 'expo-font';
 import { useAssets } from 'expo-asset';
-import { AppLoading } from 'expo';
+import AppLoading from 'expo-app-loading';
 
 const initialData = {};
 const store = configureStore(initialData);
