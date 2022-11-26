@@ -20,10 +20,11 @@ const DrawerNavigator = () => {
 
   return (
     <Drawer.Navigator
-      drawerContent={drawerContent}
-      drawerContentOptions={{
-        activeTintColor: Colors.primary
-      }}
+    initialRouteName="Home"
+      // drawerContent={drawerContent}
+      // screenOptions={{
+      //   activeTintColor: Colors.primary
+      // }}
     >
       <Drawer.Screen component={AppNavigator} name="Home" />
     </Drawer.Navigator>
