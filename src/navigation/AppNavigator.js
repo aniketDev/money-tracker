@@ -11,28 +11,29 @@ const AppNavigator = ({ navigation }) => {
   const defaultNavOptions = {
     title: 'Fallback title',
     headerStyle: {
-      backgroundColor: Colors.primary
+      backgroundColor: Colors.accent
     },
     headerTintColor: 'white',
     headerTitleStyle: {
       fontWeight: 'bold',
     },
-    // headerLeft: () => {
-    //   return (
-    //     <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
-    //       <Item
-    //         title="Cart"
-    //         iconName="md-menu"
-    //         onPress={() => navigation.toggleDrawer()}
-    //       />
-    //     </HeaderButtons>
-    //   );
-    // }
+    headerShown: false,
+    headerLeft: () => {
+      return (
+        <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
+          <Item
+            title="Cart"
+            iconName="md-menu"
+            onPress={() => navigation.toggleDrawer()}
+          />
+        </HeaderButtons>
+      );
+    }
   };
 
   return (
     <Stack.Navigator screenOptions={defaultNavOptions}>
-      <Stack.Screen component={TabNavigator} name="Tab" options={{ title: 'My home', headerShown: false }} />
+      <Stack.Screen component={TabNavigator} name="Tab" options={{ title: 'My home', headerShown: true }} />
     </Stack.Navigator>
   );
 };

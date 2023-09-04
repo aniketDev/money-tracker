@@ -1,40 +1,38 @@
 import React from 'react';
-import {
-  createDrawerNavigator,
-  DrawerItemList
-} from '@react-navigation/drawer';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, StyleSheet } from 'react-native';
-import { Colors } from '../constants';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import AppNavigator from './AppNavigator';
+import { Colors } from '../constants';
 
 const DrawerNavigator = () => {
   const Drawer = createDrawerNavigator();
-  const drawerContent = (props) => (
-    <View style={styles.drawerListContainer}>
-      <SafeAreaView>
-        <DrawerItemList {...props} />
-      </SafeAreaView>
-    </View>
-  );
+  const screenOptions = {
+    title: 'Home page',
+    headerStyle: {
+      backgroundColor: Colors.accent
+    },
+    headerTintColor: 'white',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    headerShown: false,
+    headerLeft: () => {
+      return (
+        <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
+          <Item
+            title="Cart"
+            iconName="md-menu"
+            onPress={() => navigation.toggleDrawer()}
+          />
+        </HeaderButtons>
+      );
+    }
+  }
 
   return (
-    <Drawer.Navigator
-    initialRouteName="Home"
-      // drawerContent={drawerContent}
-      // screenOptions={{
-      //   activeTintColor: Colors.primary
-      // }}
-    >
+    <Drawer.Navigator initialRouteName="Home" screenOptions={screenOptions}>
       <Drawer.Screen component={AppNavigator} name="Home" />
     </Drawer.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  drawerListContainer: {
-    padding: 10
-  }
-});
 
 export default DrawerNavigator;
